@@ -1,0 +1,34 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Sched API Integration plugin for Craft CMS 3.x
+ *
+ * Sched API Integration Settings.twig
+ *
+ * @author    Julian Jones
+ * @copyright Copyright (c) 2018 Julian Jones
+ * @link      http://julianmjones.com
+ * @package   SchedApiIntegration
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("julianmjones\\schedapiintegration\\assetbundles\\schedapiintegration\\SchedApiIntegrationAsset") %}
+
+{{ forms.textField({
+    label: 'Sched API Key',
+    instructions: 'Enter your Sched Api Key here',
+    id: 'schedApiKey',
+    name: 'schedApiKey',
+    value: settings['schedApiKey']})
+}}
+
+{{ forms.textField({
+    label: 'Sched Conference ID',
+    instructions: 'Enter your Sched Conference ID here',
+    id: 'conferenceId',
+    name: 'conferenceId',
+    value: settings['conferenceId']})
+}}

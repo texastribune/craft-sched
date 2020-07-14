@@ -1,0 +1,44 @@
+{
+    "name": "julianmjones/sched-api-integration",
+    "description": "Integration with Sched API and Craft CMS",
+    "type": "craft-plugin",
+    "version": "1.0.4",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "sched api integration"
+    ],
+    "support": {
+        "docs": "https://github.com/jmjones88/sched-api-integration/blob/master/README.md",
+        "issues": "https://github.com/jmjones88/sched-api-integration/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julian Jones",
+            "homepage": "http://julianmjones.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+          "julianmjones\\schedapiintegration\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Sched API Integration",
+        "handle": "sched-api-integration",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/jmjones88/sched-api-integration/master/CHANGELOG.md",
+        "components": {
+            "schedApiIntegrationService": "julianmjones\\schedapiintegration\\services\\SchedApiIntegrationService"
+        },
+        "class": "julianmjones\\schedapiintegration\\SchedApiIntegration"
+    }
+}

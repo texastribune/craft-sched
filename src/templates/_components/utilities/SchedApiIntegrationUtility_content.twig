@@ -1,0 +1,24 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Sched API Integration plugin for Craft CMS
+ *
+ * SchedApiIntegrationUtility Utility Content
+ *
+ * @author    Julian Jones
+ * @copyright Copyright (c) 2018 Julian Jones
+ * @link      http://julianmjones.com
+ * @package   SchedApiIntegration
+ * @since     1.0.0
+ */
+#}
+
+<h1>SchedApiIntegrationUtility</h1>
+
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@julianmjones/schedapiintegration/assetbundles/schedapiintegrationutilityutility/dist', true) ~ '/img/SchedApiIntegrationUtility-icon.svg' %}
+
+<img src="{{ iconUrl }}" height="64" width="64" />
+
+<p>Your Utility content goes here</p>
+
+<p>{{ someVar }}</p>
