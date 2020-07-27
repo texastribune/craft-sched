@@ -1,5 +1,5 @@
 {
-    "name": "julianmjones/sched-api-integration",
+    "name": "texastribune/craft-sched",
     "description": "Integration with Sched API and Craft CMS",
     "type": "craft-plugin",
     "version": "1.0.4",
@@ -35,7 +35,7 @@
         "handle": "sched-api-integration",
         "hasCpSettings": true,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/jmjones88/sched-api-integration/master/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/texastribune/craft-sched/master/CHANGELOG.md",
         "components": {
             "schedApiIntegrationService": "julianmjones\\schedapiintegration\\services\\SchedApiIntegrationService"
         },
