@@ -58,6 +58,16 @@ class SchedApiIntegrationVariable
         return $result;
     }
 
+    public function getEvent($eventKey)
+    {
+        $schedule = $this->schedule();
+        $scheduleIndex = array_search($eventKey, array_column($schedule, 'event_key'));
+        if(false !== $scheduleIndex) {
+            return $schedule[$scheduleIndex];
+        }
+        return false;
+    }
+
     public function getUser($term, $by = 'username')
     {
         $speakers = $this->getSpeakers();
