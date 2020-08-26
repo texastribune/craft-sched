@@ -120,15 +120,17 @@ class SchedApiIntegrationVariable
         //First, find the speaker in the speakers
         $speakerIndex = array_search($user, array_column($speakers, 'username'));
         if(false !== $speakerIndex) {
-            $speaker = $speakers[$speakerIndex];
-            $sessions = $speaker['sessions'];
-            if(is_array($sessions)) {
-                foreach($sessions as $sessionId) {
-                    $sessionIndex = array_search($sessionId, array_column($schedule, 'id'));
-                    //If we've found a session, add it to the array
-                    if($sessionIndex) {
-                        array_push($returnSessions, $schedule[$sessionIndex]);
-                    }
+            foreach($schedule as $scheduleEvent) {
+                $speakerIndex = null;
+                $moderatorIndex = null;
+                if (array_key_exists('speakers', $scheduleEvent)) {
+                    $speakerIndex = in_array($user, array_column($scheduleEvent['speakers'], 'username'));
+                }
+                if (array_key_exists('moderators', $scheduleEvent)) {
+                    $moderatorIndex = in_array($user, array_column($scheduleEvent['moderators'], 'username'));
+                }
+                if($speakerIndex || $moderatorIndex) {
+                    array_push($returnSessions, $scheduleEvent);
                 }
             }
         }
